@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <title>Inspección Visual PWA</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="./icons/icon-192.png">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+</head>
+<body>
+    <header>
+        <h1>Inspección Visual</h1>
+        <button id="btn-instalar" type="button" hidden>Instalar App</button>
+    </header>
+
+    <main>
+        <section id="instrucciones-ios" class="card aviso" hidden>
+            <h2>Instalar en iPhone</h2>
+            <p>Para instalar en iPhone, pulsa el icono Compartir y selecciona 'Agregar a inicio'.</p>
+        </section>
+
+        <section class="card">
+            <h2>Cámara</h2>
+            <button id="btn-preparar-camara" type="button">Solicitar Acceso a Cámara</button>
+
+            <div id="aviso-permiso" class="aviso" hidden>
+                <p>Esta aplicación requiere acceso a tu cámara únicamente para mostrar una vista previa local en pantalla. Ninguna imagen se envía a servidores externos.</p>
+                <p>Se encenderá primero la cámara trasera.</p>
+                <button id="btn-confirmar-permiso" type="button">Aceptar y Encender Cámara</button>
+            </div>
+
+            <video id="visor-camara" autoplay playsinline muted></video>
+            <p id="mensaje-estado">Cámara apagada</p>
+
+            <div class="controles">
+                <button id="btn-alternar-camara" type="button" disabled>Cambiar Cámara</button>
+                <button id="btn-apagar-camara" type="button" disabled>Apagar Cámara</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+</html>
